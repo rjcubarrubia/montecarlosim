@@ -1,0 +1,21 @@
+test_1_change_weight (__main__.MonteCarloSimTestSuite)
+Tests change_weight method in Die class. ... ok
+test_2_roll (__main__.MonteCarloSimTestSuite)
+Tests roll method in Die class. ... ok
+test_3_show (__main__.MonteCarloSimTestSuite)
+Tests show method in Die class. ... ok
+test_4_play (__main__.MonteCarloSimTestSuite)
+Tests play method in Game class. ... ok
+test_5_show (__main__.MonteCarloSimTestSuite)
+Tests show method in Game class. ... ok
+test_6_face_counts_per_roll (__main__.MonteCarloSimTestSuite)
+Tests face_counts_per_roll method in Analyzer class. ... ok
+test_7_jackpot (__main__.MonteCarloSimTestSuite)
+Tests jackpot method in Analyzer class. ... ok
+test_9_permutations (__main__.MonteCarloSimTestSuite)
+Tests permutations method in Analyzer class. ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.017s
+
+OK
