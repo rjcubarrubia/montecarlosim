@@ -132,14 +132,14 @@ class Analyzer():
         jackpot_df
         jackpot_count
         permutation_count
-        combo_df (work in progress)
-        combo_count (work in progress)
+        combo_df
+        combo_count
     Contains the following methods:
         __init__
         face_counts_per_roll
         jackpot
         permutations
-        combo (work in progress)  
+        combo  
     '''
         
     
@@ -179,19 +179,17 @@ class Analyzer():
         print("There was/were " + str(self.jackpot_count) + " jackpot(s).")
     
     
-    #def combo(self):
-        #current code creates permuations and not combinations; will return later and complete, time permitting
-        #'''
-        #Creates data frame with multi-columned index. 
-        #Rows are combinations and column is how many times that combination appeared.
-        #Creates a count of how many unique combinations were rolled. 
-        #'''
+    def combo(self):
+        '''
+        Creates data frame with multi-columned index. 
+        Rows are combinations and column is how many times that combination appeared.
+        Creates a count of how many unique combinations were rolled. 
+        '''
         
-        #game_df = self._game.show()
-        #self.combo_df = game_df.loc[ : , : ].value_counts(ascending = False).reset_index(name = 'count')
-        #self.combo_df = game_df.set_index([column for column in game_df.columns if column != 'count'])
+        game_df = self._game.show()
         
-        #self.combo_count = int(len(self.combo_df))
+        self.combo_df = game_df.apply(lambda x: x.sort_values().squeeze(), axis=1).value_counts().to_frame('count')
+        self.combo_count = len(self.combo_df)    
         
         
     def permutations(self):

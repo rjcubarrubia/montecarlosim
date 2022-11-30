@@ -12,10 +12,12 @@ test_6_face_counts_per_roll (__main__.MonteCarloSimTestSuite)
 Tests face_counts_per_roll method in Analyzer class. ... ok
 test_7_jackpot (__main__.MonteCarloSimTestSuite)
 Tests jackpot method in Analyzer class. ... ok
+test_8_combo (__main__.MonteCarloSimTestSuite)
+Tests combo method in Analyzer class. ... ok
 test_9_permutations (__main__.MonteCarloSimTestSuite)
 Tests permutations method in Analyzer class. ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.017s
+Ran 9 tests in 0.020s
 
 OK

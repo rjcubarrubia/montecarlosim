@@ -142,12 +142,33 @@ class MonteCarloSimTestSuite(unittest.TestCase):
         self.assertEqual(test4jackpots, testvalue)
                                        
                                        
-   #def test_8_combo(self):
-        #'''
-        #Tests combo method in Analyzer class.
-        #'''
+    def test_8_combo(self):
+        '''
+        Tests combo method in Analyzer class.
+        '''
+        twosided = [1, 2]
                                        
+        testcoin1 = Die(twosided)
+        testcoin2 = Die(twosided)
+        testcoin3 = Die(twosided)
                                        
+        testcoin1.change_weight(2, 0)
+        testcoin2.change_weight(2, 0)
+        testcoin3.change_weight(2, 0)
+                                       
+        testcoinlist = [testcoin1, testcoin2, testcoin3]
+        testgame = Game(testcoinlist)
+        testgame.play(5)
+                                       
+        testgameanalyzer = Analyzer(testgame)
+        testgameanalyzer.combo()
+        
+        testgamecombocount = testgameanalyzer.combo_count
+        testvalue = 1
+        
+        self.assertEqual(testgamecombocount, testvalue)
+        
+                                                                              
     def test_9_permutations(self):
         '''
         Tests permutations method in Analyzer class.
