@@ -5,7 +5,6 @@ import pandas as pd
 class Die():
     '''
     Creates die object. 
-    Contains no public attributes but contains a private data frame of faces and weights that represents die object.
     Contains the methods:
         __init__
         change_weight
@@ -73,8 +72,7 @@ class Game():
     Creates a game of rolling one or more die of the same kind one or more times.
     Dice have the same number of sides and set of faces but each die can have its own weights.
     Contains no public attributes. 
-    Contains private data frame of rolls as observations (rows) and faces as features (columns).
-    This data frame can be made narrow or wide with the .show method.
+    show() method returns data frame can be made narrow or wide.
     Contains the methods:
         __init__
         play
@@ -155,6 +153,7 @@ class Analyzer():
     def face_counts_per_roll(self):
         '''
         Creates data frame containing the amount of times a face appears in each roll.
+        This data frame is the public attribute face_counts_per_roll_df
         Rows are rolls; columns are faces in the dice.
         '''
         
@@ -167,7 +166,9 @@ class Analyzer():
         '''
         Counts the amount of rolls that resulted in all faces being the same.
         Creates data frame that tracks each jackpot. with rolls as rows and faces as columns.
+        This data frame is the public attribute jackpot_df
         Returns the count of jackpots rolled.
+        Count of jackpots is also the public attribute jackpot_count
         '''
         
         game_df = self._game.show()
@@ -183,7 +184,9 @@ class Analyzer():
         '''
         Creates data frame with multi-columned index. 
         Rows are combinations and column is how many times that combination appeared.
+        This data frame is the public attribute combo_df
         Creates a count of how many unique combinations were rolled. 
+        This count is the public attribute combo_count
         '''
         
         game_df = self._game.show()
@@ -195,6 +198,7 @@ class Analyzer():
     def permutations(self):
         '''
         Counts the amount of permuations that appeared.
+        This count is the public attribute permutation_count
         '''
         
         self.permutation_count = self._game.show().value_counts(ascending = False).reset_index(name = 'count')
